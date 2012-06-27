@@ -1,0 +1,311 @@
+/*Simple Default Responsive Stylesheet*/
+/* Reset */
+html,
+body,
+body div,
+span,
+object,
+iframe,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+
+/* Typography, Borders, Backgrounds */
+
+/* color hex codes:
+darkest grey: 2e4958
+dark grey: 566d79
+cool grey 5: bcbec0
+cool grey 1 (lighter): d6d6d4
+red: ef4136
+cyan: 00AAF0
+bright yellow: FFDB2E
+light yellow: ffeebd
+green: 00a88e
+blue: 005496
+*/
+
+html {
+	background:#2e4958;
+	color:#bcbec0;
+}
+
+body {
+	font-family:Helvetica, Arial, sans-serif;
+	font-size:1em;
+	/*demo grid*/background:url('../img/grid-demo.png') top center no-repeat;
+}
+
+nav#primary-nav {
+	background:#263C48;
+}
+
+a {
+	color:#ffeebd;
+	text-decoration:none;
+}
+
+a:hover, a:active {
+	text-decoration:underline;
+}
+
+h1, h2, h3 {
+	color:#bcbec0;
+	text-shadow:0px 1px 1px rgba(70, 70, 70, 0.8);
+}
+
+/* Layout */
+
+/*Box sizing for a better box model!*/
+* { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+	*behavior: url(/js/boxsizing.htc);
+}
+
+nav#primary-nav {
+	width:100%;
+	padding:10px 0;
+}
+
+nav#primary-nav ul, header, div.callout, div.content, footer {
+	width:75.68359375%; /* 775px/1024px */
+	margin:0 auto;
+	padding-left: 20px;
+}
+
+footer[role="contentinfo"] {
+}
+
+/* Header */
+header {
+
+}
+
+
+/* Content */
+div.content {
+	background-color: rgba(0,0,0,0.4);
+}
+
+div#facts ul li {
+	display:inline-block;
+	font-size:1em;
+	width:25.8064516129032%; /*200px/775px*/
+	height:200px;
+	color:#fff;
+	font-weight:bold;
+	background:#ef4136;
+	padding:1.9354838709677%; /*15px/775px*/
+	float:left;
+	margin:0px 1.9354838709677% 15px 0; /*15px/775px*/
+}
+
+div#facts ul li.wide {
+	width:315px; /*320px/775px*/
+}
+
+div#facts ul li h4 {
+	font-size:2em;
+	line-height:40px;
+	margin:5px 0;
+}
+
+/* Navigation */
+
+nav#primary-nav ul li {
+	display:inline;
+	margin-right:25px;
+}
+
+nav#primary-nav ul li a {
+	display:inline-block;
+	color:#00AAF0;
+	background: #1D2E38;
+	text-shadow:0px 1px 1px rgba(70, 70, 70, 0.8);
+	padding:4px 10px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+nav#primary-nav ul li a:hover {
+	color:#ffeebd;
+	background: #435361;
+	text-decoration:none;
+	text-shadow:0px 1px 1px rgba(70, 70, 70, 0.8);
+}
+
+/* Footer: Sitemap/Events */
+
+footer[role="contentinfo"] {
+	clear:both;
+}
+
+/* Firefox only */
+
+
+@-moz-document url-prefix() {
+
+/*Firefox hack styles go here*/
+
+}
+
+
+/* Large screen styles */
+
+@media only screen and (min-width:600px) {
+
+nav#primary-nav ul, header, div.content, footer {
+max-width:775px;
+}
+
+
+}
+
+
+/* Small screen styles */
+
+@media only screen and (max-width:775px) {
+
+nav#primary-nav ul, header, div.content, footer {
+	width:99%;
+}
+
+img {
+	max-width: 100% !important;
+}
+
+}
+
+/* Print Styles */
+
+@media print {
+* {
+	background: transparent !important;
+	color: black !important;
+	box-shadow: none !important;
+	text-shadow: none !important;
+	filter: none !important;
+	ms-filter: none !important;
+}
+
+html, body {
+	border:0;
+	padding:0;
+}
+
+header {
+	padding:0;
+}
+
+footer {
+	font-size:0.8em;
+}
+
+h1 {
+	font-size:2em;
+}
+
+h2, h3 {
+	page-break-after: avoid;
+}
+pre, blockquote {
+	border: 1px solid #808080;
+	page-break-inside: avoid;
+}
+a, a:visited {
+	text-decoration: underline;
+}
+a[href]:after {
+	content: " (" attr(href) ")";
+}
+img {
+	max-width: 100% !important;
+	page-break-inside: avoid;
+}
+tr {
+	page-break-inside: avoid;
+}
+}
